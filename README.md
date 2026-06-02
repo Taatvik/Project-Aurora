@@ -67,7 +67,7 @@ M --> H
 ```
 
 Core Components
-1. Data Processing Layer
+## 1. Data Processing Layer
 
 Responsible for preparing user and business data for downstream analysis.
 
@@ -85,7 +85,7 @@ Output
 
 A structured dataset suitable for segmentation and machine learning tasks.
 
-2. User Segmentation Engine
+## 2. User Segmentation Engine
 
 Users are grouped according to behavioral characteristics rather than treated as a single population.
 
@@ -104,7 +104,7 @@ Struggling Learners
 
 Segmentation enables the system to design communication strategies that align with different user motivations.
 
-3. Goal & Communication Strategy Engine
+## 3. Goal & Communication Strategy Engine
 
 Each segment is assigned:
 
@@ -123,7 +123,7 @@ Loss Avoidance
 
 These themes help align notifications with user motivations.
 
-4. Notification Timing Optimizer
+## 4. Notification Timing Optimizer
 
 Aurora predicts the most effective notification window for each user.
 
@@ -158,7 +158,7 @@ Top 3 notification windows
 Engagement probabilities
 Segment-level timing preferences
 
-5. Notification Template Generator
+## 5. Notification Template Generator
 
 Aurora generates personalized notification templates using Gemini.
 
@@ -192,7 +192,7 @@ You're one lesson away from extending your streak.
 CTA
 Practice Now
 
-6. Scheduling Layer
+## 6. Scheduling Layer
 
 Combines:
 
@@ -204,7 +204,7 @@ to create personalized notification schedules.
 
 The scheduling system prioritizes engagement while preventing excessive notification frequency.
 
-7. Feedback & Learning System
+## 7. Feedback & Learning System
 
 Aurora continuously evaluates communication performance using engagement metrics.
 
