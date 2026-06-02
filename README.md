@@ -1,7 +1,12 @@
-Project Aurora
-Self-Learning Notification Orchestrator
-AI-Powered User Engagement Personalization System
+<div align="center">
 
+# Project Aurora
+
+## Self-Learning Notification Orchestrator
+
+### AI-Powered User Engagement Personalization System
+
+</div>
 Aurora is a notification orchestration platform that personalizes user communication using behavioral analytics, machine learning, and large language models.
 
 The system analyzes user activity patterns, groups users into behavioral segments, predicts optimal notification timing, generates personalized bilingual notification templates, and continuously improves communication strategies using engagement feedback.
