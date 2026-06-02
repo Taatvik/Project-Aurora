@@ -1,342 +1,272 @@
-<div align="center">
+Project Aurora
+Self-Learning Notification Orchestrator
+AI-Powered User Engagement Personalization System
 
-# 🌌 Project Aurora
-### Self-Learning Notification Orchestrator
+Aurora is a notification orchestration platform that personalizes user communication using behavioral analytics, machine learning, and large language models.
 
-</div>
+The system analyzes user activity patterns, groups users into behavioral segments, predicts optimal notification timing, generates personalized bilingual notification templates, and continuously improves communication strategies using engagement feedback.
 
-<div align="center">
+Although developed using SpeakX (an AI-powered English learning platform) as the reference domain, Aurora is designed to be domain-agnostic and can be adapted to other applications by replacing the knowledge base and user behavior dataset.
 
-### 🚀 *AI-Powered Adaptive Engagement Intelligence System*
+Problem Statement
 
-**🏆 Kriti 2026 - SpeakX Challenge**  
+Traditional notification systems rely on static rules such as:
 
-[🎥 Demo Video](https://drive.google.com/file/d/1c_yMBaIjrgGrG-4bzWlv0tDpM2K6HmWy/view?usp=drivesdk)
+Send a reminder after 3 days of inactivity
+Send notifications to all users at a fixed time
+Use the same message for every user
 
-</div>
+Such approaches ignore differences in user behavior, motivation, and engagement patterns, often leading to notification fatigue and reduced effectiveness.
 
-# ✨ Overview
+Aurora addresses this problem by answering four key questions:
 
-**Project Aurora** is a **domain-agnostic, self-learning notification orchestration platform** that dynamically generates, optimizes, and evolves user engagement strategies using:
+Which users should receive notifications?
+What type of message should be sent?
+When should the notification be delivered?
+How should the strategy improve based on user feedback?
 
-- 🧠 **Large Language Models**
-- 📊 **Behavioral Analytics**
-- 🎯 **Segmentation Intelligence**
-- 🤖 **Reinforcement Learning**
-- ⏰ **Timing Optimization**
+System Architechture
 
-Aurora ingests:
+Company Knowledge Base
+            │
+            ▼
+    User Data Processing
+            │
+            ▼
+     Feature Engineering
+            │
+            ▼
+     User Segmentation
+            │
+            ▼
+    Goal & Theme Mapping
+            │
+            ▼
+     Timing Prediction
+            │
+            ▼
+  Template Generation
+            │
+            ▼
+ Notification Scheduling
+            │
+            ▼
+   Feedback Evaluation
+            │
+            ▼
+ Strategy Improvement
 
-- 📄 Company Knowledge Banks (`.md/.txt`)
-- 📈 User Behavioral Data (`.csv`)
-- 🧪 Experiment Results
+Core Components
+1. Data Processing Layer
 
-…and autonomously builds a **personalized multi-channel notification ecosystem** that continuously improves engagement performance over time.
+Responsible for preparing user and business data for downstream analysis.
 
----
+Inputs
+Company Knowledge Base
+User Behavioral Dataset
+Experiment Results
+Processing
+Schema validation
+Missing value handling
+Deduplication
+Feature transformation
+Dataset merging
+Output
 
-# 🏗️ System Architecture
+A structured dataset suitable for segmentation and machine learning tasks.
 
-<div align="center">
+2. User Segmentation Engine
 
-```mermaid
-flowchart TD
-    A["Company KB (.md)"] --> B["Knowledge Engine"]
-    B --> C["User Data Ingestion"]
-    C --> D["MECE Segmentation Engine"]
-    D --> E["Goal & Journey Builder"]
-    E --> F["Theme + Template Generation"]
-    F --> G["Timing Optimizer"]
-    G --> H["Schedule Orchestrator"]
-    H --> I["Reinforcement Learning"]
-    I --> J["Self-Improving System"]
+Users are grouped according to behavioral characteristics rather than treated as a single population.
 
-    classDef box fill:#0f172a,stroke:#38bdf8,color:#ffffff,stroke-width:2px;
-    class A,B,C,D,E,F,G,H,I,J box;
-```
+Behavioral Signals
+Session frequency
+Exercises completed
+Notification responsiveness
+Streak consistency
+Feature usage patterns
+Motivation indicators
+Example Segments
+Streak Champions
+Rank Chasers
+Habit Builders
+Struggling Learners
 
-</div>
+Segmentation enables the system to design communication strategies that align with different user motivations.
+
+3. Goal & Communication Strategy Engine
+
+Each segment is assigned:
+
+Engagement goals
+Communication objectives
+Motivational themes
+
+The system uses the Octalysis behavioral framework to determine suitable messaging approaches.
+
+Communication Themes
+Accomplishment
+Ownership
+Social Influence
+Scarcity
+Loss Avoidance
+
+These themes help align notifications with user motivations.
+
+4. Notification Timing Optimizer
+
+Aurora predicts the most effective notification window for each user.
+
+Features Used
+Sessions in last 7 days
+Exercises completed
+Current streak
+Motivation score
+Activeness score
+Churn risk
+Lifecycle stage
+
+### Models Evaluated
+
+To predict the optimal notification delivery window, multiple machine learning models were benchmarked and compared.
+
+| Model | Role in Evaluation |
+|--------|-------------------|
+| **Random Forest** | Ensemble-based classifier capable of modeling complex non-linear behavioral patterns. |
+| **Gradient Boosting** | Sequential ensemble method designed to improve prediction accuracy on structured tabular data. |
+| **Logistic Regression** | Lightweight and interpretable baseline classification model. |
+| **Support Vector Machine (SVM)** | Margin-based classifier used to identify optimal class boundaries in feature space. |
+
+Model selection was performed using Accuracy, Macro F1-Score, and Cross-Validation Accuracy to ensure both predictive performance and robustness on unseen data.
 
 
-# 🧩 Pipeline Breakdown
+Output
 
-## 🧠 Task 1 — System Architecture & Intelligence Design
+For every user, the system predicts:
 
-### 🔹 Knowledge Bank Engine *(Gemini 2.5 Flash)*
+Top 3 notification windows
+Engagement probabilities
+Segment-level timing preferences
 
-Extracts:
+5. Notification Template Generator
 
-- North Star Metrics
-- Feature → Goal mappings
-- Tone & Hook matrices
-- Propensity dimensions
-- Journey templates
-- Lifecycle progression structures
+Aurora generates personalized notification templates using Gemini.
 
-### 🔹 User Data Ingestion
+Templates are generated using:
 
-Robust **5-layer validation pipeline**:
+User segment information
+Lifecycle stage
+Communication goals
+Behavioral themes
+Output Structure
 
-- ✅ Schema Validation
-- ✅ Type Checking
-- ✅ Range Validation
-- ✅ Missing Value Imputation
-- ✅ Deduplication
+Each template contains:
 
-### 🔹 MECE Segmentation Engine
+Title
+Body
+Call-to-Action (CTA)
 
-Advanced clustering pipeline using:
+Generated in:
 
-- 📊 **K-Means Clustering**
-- 📈 **Silhouette Score Sweep (k = 6 → 12)**
-- ⚖️ Lifecycle percentile normalization
-- 🧬 KB-derived propensity dimensions:
-  - Gamification
-  - AI Tutor
-  - Leaderboards
-  - Social Interaction
+English
+Hinglish
 
-### 🔹 Persona Generation
+Example:
 
-Dynamic 3-axis persona labeling:
+Title
+Keep Your Streak Alive
 
-```text
-Dominant Trait × Activeness × Churn Risk
-```
+Body
+You're one lesson away from extending your streak.
 
-with iterative collision resolution.
+CTA
+Practice Now
 
-### 🔹 Goal & Journey Builder
+6. Scheduling Layer
 
-Generates:
+Combines:
 
-- 🎯 Primary goals
-- 🪜 Sub-goals
-- 📅 Day-wise progression journeys
-- 🔄 Lifecycle-aware engagement flows
+User segment
+Predicted timing
+Generated templates
 
----
+to create personalized notification schedules.
 
-# 💬 Task 2 — Communication & Timing Intelligence
+The scheduling system prioritizes engagement while preventing excessive notification frequency.
 
-### 🔹 Theme Engine *(Gemini)*
+7. Feedback & Learning System
 
-Maps the **Top-3 Octalysis motivational drives** for every segment.
+Aurora continuously evaluates communication performance using engagement metrics.
 
-### 🔹 Template Generator *(Gemini REST API)*
+Evaluation Signals
+Notification opens
+Session starts
+Exercise completions
+Streak continuation
 
-Generates:
+## Strategy Classification
 
-- 🌐 Bilingual notifications *(English + Hindi)*
-- ⚡ Concurrent batched inference
-- 🧠 Segment-aware messaging
-- 🎭 Theme-specific communication styles
+Aurora evaluates notification strategies using engagement signals collected from user interactions. Each strategy is classified based on its observed performance and is subsequently assigned an appropriate traffic allocation.
 
-### 🔹 Timing Optimizer
+### Evaluation Signals
 
-Compares multiple ML models:
+- Notification Open Rate
+- Session Starts
+- Exercise Completions
+- Streak Continuation
+- Overall Engagement Reward
 
-| Model | Purpose |
-|---|---|
-| Random Forest | Time zone prediction |
-| Gradient Boosting | Behavioral timing patterns |
-| Logistic Regression | Baseline classification |
-| SVM | Boundary optimization |
+### Classification Categories
 
-Outputs:
+| Classification | Description | Action |
+|---------------|-------------|---------|
+| **GOOD** | Consistently generates strong engagement and positive user response. | Prioritize and increase traffic allocation. |
+| **NEUTRAL** | Produces moderate engagement with inconclusive performance. | Continue testing and generate alternative variants. |
+| **BAD** | Shows low engagement or poor user response. | Reduce exposure and replace with improved strategies. |
 
-- ⏰ Top-3 optimal delivery windows
-- 🌍 Segment-level timezone intelligence
-- 👤 User-level notification timing
-
-### 🔹 Schedule Generator *(Claude Sonnet)*
-
-Builds intelligent schedules using:
-
-- 🎯 Octalysis drive scoring
-- 📈 Activeness-based notification frequency
-- 📡 Multi-channel routing:
-  - Push
-  - In-App
-  - WhatsApp
-  - SMS
-- 🧠 Template-to-notification optimization
-
----
-
-# 🔁 Task 3 — Execution & Self-Learning
-
-### 🔹 RL Classification Engine
-
-Performs:
-
-- 🧪 Reward-weight grid search
-- 📊 Bayesian engagement estimation
-- ⚖️ Quantile-based performance classification
-
-Outputs:
-
-```text
-GOOD / NEUTRAL / BAD
-```
-
-with confidence gating.
-
-### 🔹 Strategy Generator
-
-Implements adaptive traffic allocation:
+### Traffic Allocation Policy
 
 | Strategy Class | Allocation |
-|---|---|
-| GOOD | 70% |
-| NEUTRAL | 25% |
-| BAD | 5% |
+|---------------|------------|
+| **GOOD** | 70% |
+| **NEUTRAL** | 25% |
+| **BAD** | 5% |
 
-Additional capabilities:
+This feedback-driven mechanism allows Aurora to gradually shift traffic toward higher-performing notification strategies while maintaining sufficient exploration for continuous improvement.
 
-- 🚨 Uninstall guardrails
-- 📉 Risk mitigation
-- ⏰ Timing effectiveness analysis
+Technologies Used
+Machine Learning
+Scikit-Learn
+Pandas
+NumPy
+SciPy
+Large Language Models
+Gemini 2.5 Flash
+Development Tools
+Python
+Joblib
+Requests
 
-### 🔹 Goal Updater *(Gemini)*
+Key Features
+Behavioral user segmentation
+Personalized notification timing prediction
+Bilingual notification generation
+Feedback-driven optimization
+Domain-agnostic architecture
+Machine learning based personalization
+LLM-powered content generation
+Scalable modular pipeline
 
-Adaptive 3-tier optimization strategy:
+Future Improvements
+Online learning models
+Contextual bandits
+Real-time A/B testing
+Deep personalization models
+Real-time notification delivery infrastructure
+Multi-language support beyond English and Hinglish
 
-| Performance | Action |
-|---|---|
-| GOOD | Preserve |
-| NEUTRAL | Generate A/B Variants |
-| BAD | Rewrite Completely |
+Conclusion
 
-### 🔹 Iterative Regeneration
+Aurora is a self-learning notification orchestration system that combines behavioral analytics, machine learning, and generative AI to improve user engagement.
 
-Aurora intelligently regenerates only:
-
-- Changed templates
-- Updated schedules
-- RL-affected components
-
-to minimize compute overhead.
-
-### 🔹 Delta Report Generator
-
-Creates detailed causal reports explaining:
-
-- What changed
-- Why it changed
-- RL signals responsible
-- Expected impact
-
----
-
-# 🤖 Models & Technologies Used
-
-## 🧠 LLMs
-
-| Model | Usage |
-|---|---|
-| Gemini 2.5 Flash | KB extraction, optimization, template generation |
-| Claude Sonnet 4.6 | Schedule generation & drive scoring |
-
-## 📊 Machine Learning
-
-| Library | Purpose |
-|---|---|
-| scikit-learn | Clustering & classification |
-| pandas | Data processing |
-| numpy | Numerical computation |
-| scipy | Statistical utilities |
-| joblib | Model persistence |
-
----
-
-# ⚙️ Installation
-
-## 📦 Prerequisites
-
-```bash
-pip install pandas numpy scikit-learn scipy joblib
-pip install google-genai google-generativeai
-pip install anthropic requests
-```
-
----
-
-# ▶️ Running the Pipeline
-
-## 🚀 Run Complete Pipeline
-
-```bash
-python run_pipeline.py \
-  --data user_behavioral_data.csv \
-  --kb company_kb.md \
-  --experiment experiment_results.csv
-```
-
----
-
-# 🧪 Run Individual Components
-
-```bash
-python codebase/task1_aurora.py
-python codebase/theme_engine.py
-python codebase/generate_templates.py
-python codebase/timing_optimizer.py
-python codebase/schedule_generator.py
-python codebase/task3_learning_engine.py
-python codebase/generate_delta_report.py
-```
-
----
-
-# 📂 Required Input Files
-
-| File | Description |
-|---|---|
-| `user_behavioral_data.csv` | Behavioral dataset (1500 users) |
-| `company_kb.md` | Company Knowledge Bank |
-| `experiment_results.csv` | SpeakX Demo-2 experiment results |
-
----
-
-# 🌟 Key Highlights
-
-- 🧠 Fully AI-driven orchestration
-- 🔁 Reinforcement learning feedback loop
-- 🌍 Domain-agnostic architecture
-- 📈 Self-improving engagement engine
-- ⚡ Multi-model ML optimization
-- 🌐 Multilingual notification generation
-- 📡 Multi-channel intelligent delivery
-- 🛡️ Safety-aware traffic allocation
-- 📊 Explainable adaptive strategies
-
----
-
-# 💻 Platform Compatibility
-
-✅ Windows Compatible  
-✅ Linux Compatible  
-✅ Cross-platform path handling using `os.path.join()`  
-✅ No Unix-specific dependencies
-
----
-
-# 📌 Future Improvements
-
-- 📱 Real-time notification streaming
-- 🧠 Online reinforcement learning
-- 🔔 Dynamic push prioritization
-- 🎙️ Voice notification synthesis
-- 🌎 Regional language expansion
-- 📊 Live analytics dashboard
-- ⚡ Kafka / Redis integration
-
----
-
-<div align="center">
-
-## 🌌 Aurora  
-### *Notifications that learn, adapt, and evolve.*
-
-</div>
+By understanding user behavior, predicting optimal notification timing, generating personalized content, and adapting based on engagement feedback, Aurora transforms traditional rule-based notifications into an intelligent and continuously improving communication system.
