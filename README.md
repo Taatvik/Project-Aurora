@@ -13,7 +13,7 @@ The system analyzes user activity patterns, groups users into behavioral segment
 
 Although developed using SpeakX (an AI-powered English learning platform) as the reference domain, Aurora is designed to be domain-agnostic and can be adapted to other applications by replacing the knowledge base and user behavior dataset.
 
-Problem Statement
+# Problem Statement
 
 Traditional notification systems rely on static rules such as:
 
@@ -66,7 +66,7 @@ M --> G
 M --> H
 ```
 
-Core Components
+# Core Components
 ## 1. Data Processing Layer
 
 Responsible for preparing user and business data for downstream analysis.
