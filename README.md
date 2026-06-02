@@ -30,36 +30,41 @@ What type of message should be sent?
 When should the notification be delivered?
 How should the strategy improve based on user feedback?
 
-System Architechture
+# System Architecture
 
-Company Knowledge Base
-            │
-            ▼
-    User Data Processing
-            │
-            ▼
-     Feature Engineering
-            │
-            ▼
-     User Segmentation
-            │
-            ▼
-    Goal & Theme Mapping
-            │
-            ▼
-     Timing Prediction
-            │
-            ▼
-  Template Generation
-            │
-            ▼
- Notification Scheduling
-            │
-            ▼
-   Feedback Evaluation
-            │
-            ▼
- Strategy Improvement
+```mermaid
+flowchart LR
+
+A[Knowledge Base]
+B[User Data]
+C[Experiment Results]
+
+A --> D[Intelligence Layer]
+B --> D
+C --> D
+
+D --> E[User Segmentation]
+
+E --> F[Goal & Theme Engine]
+
+F --> G[Timing Prediction Model]
+
+F --> H[Gemini Template Generator]
+
+G --> I[Notification Scheduler]
+H --> I
+
+I --> J[Personalized Notifications]
+
+J --> K[Engagement Feedback]
+
+K --> L[Learning Engine]
+
+L --> M[Strategy Updates]
+
+M --> G
+M --> H
+```
 
 Core Components
 1. Data Processing Layer
