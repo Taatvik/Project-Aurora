@@ -36,19 +36,18 @@ How should the strategy improve based on user feedback?
 flowchart LR
 
 A[Knowledge Base]
-B[User Data]
-C[Experiment Results]
+B[User Behaviour Data]
 
-A --> D[Intelligence Layer]
-B --> D
-C --> D
+A --> C[Data Processing Layer]
+B --> C
+
+C --> D[Feature Engineering]
 
 D --> E[User Segmentation]
 
-E --> F[Goal & Theme Engine]
+E --> F[Goal & Theme Mapping]
 
 F --> G[Timing Prediction Model]
-
 F --> H[Gemini Template Generator]
 
 G --> I[Notification Scheduler]
@@ -60,8 +59,9 @@ J --> K[Engagement Feedback]
 
 K --> L[Learning Engine]
 
-L --> M[Strategy Updates]
+L --> M[Updated Policies]
 
+M --> F
 M --> G
 M --> H
 ```
