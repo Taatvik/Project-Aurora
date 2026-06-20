@@ -30,10 +30,8 @@ What type of message should be sent?
 When should the notification be delivered?
 How should the strategy improve based on user feedback?
 
-# System Architecture
-
 ```mermaid
-flowchart LR
+flowchart TB
 
 A[Knowledge Base]
 B[User Behaviour Data]
@@ -42,9 +40,7 @@ A --> C[Data Processing Layer]
 B --> C
 
 C --> D[Feature Engineering]
-
 D --> E[User Segmentation]
-
 E --> F[Goal & Theme Mapping]
 
 F --> G[Timing Prediction Model]
@@ -54,16 +50,13 @@ G --> I[Notification Scheduler]
 H --> I
 
 I --> J[Personalized Notifications]
-
 J --> K[Engagement Feedback]
-
 K --> L[Learning Engine]
-
 L --> M[Updated Policies]
 
-M --> F
-M --> G
-M --> H
+M -.-> F
+M -.-> G
+M -.-> H
 ```
 
 # Core Components
